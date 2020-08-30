@@ -15,6 +15,11 @@ struct Colour {
     double b;
 };
 
+Colour add(Colour a, Colour b);
+Colour minus(Colour a, Colour b);
+Colour scalar_multiply(Colour a, double scalar);
+Colour colour_multiply(Colour a, Colour b);
+
 const Colour NONE(NOFILL, NOFILL, NOFILL);
 const Colour BLACK(0.0, 0.0, 0.0);
 const Colour WHITE(1.0, 1.0, 1.0);
