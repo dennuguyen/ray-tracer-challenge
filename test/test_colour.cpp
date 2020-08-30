@@ -2,7 +2,7 @@
 #include <iostream>
 
 #include "colour.hpp"
-#include "main.hpp"
+#include "tuple.hpp"
 #include "test_colour.hpp"
 
 void test_colour(void)

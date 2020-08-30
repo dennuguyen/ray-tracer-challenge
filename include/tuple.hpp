@@ -3,6 +3,7 @@
 
 #define IS_POINT 1.0
 #define IS_VECTOR 0.0
+#define EPSILON 1e-36
 
 namespace tuple
 {

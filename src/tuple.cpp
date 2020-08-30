@@ -2,7 +2,6 @@
 #include <cmath>
 #include <iostream>
 
-#include "main.hpp"
 #include "tuple.hpp"
 
 namespace tuple
