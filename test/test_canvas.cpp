@@ -1,9 +1,8 @@
 #include <cassert>
 #include <iostream>
 
-#include "canvas.hpp"
+#include "ppm.hpp"
 #include "colour.hpp"
-#include "main.hpp"
 #include "test_canvas.hpp"
 
 void test_canvas(void)
@@ -16,7 +15,7 @@ void test_canvas_creation(void)
 {
     std::cout << "Testing canvas creation" << std::endl;
 
-    canvas::Canvas c(10, 20);
+    ppm::PortablePixMap c({0, 0}, 10, 20);
 
     assert(c.get_width() == 10);
     assert(c.get_height() == 20);
@@ -36,9 +35,11 @@ void test_ppm(void)
     std::cout << "Testing ppm creation" << std::endl;
 
     colour::Colour col(1.0, 0.8, 0.6);    
-    canvas::Canvas c(10, 2, col);
+    ppm::PortablePixMap c({0, 0}, 10, 2, col);
 
-    touch_ppm(c);
+    std::vector<ppm::PortablePixMap> v;
+    v.push_back(c);
+    touch_ppm(v, "ray.ppm");
 
     std::cout << "Passed!" << std::endl;
 }

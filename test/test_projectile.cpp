@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "canvas.hpp"
+#include "ppm.hpp"
 #include "environment.hpp"
 #include "projectile.hpp"
 #include "test_canvas.hpp"
@@ -11,7 +11,7 @@ void test_projectile(void)
     std::cout << "Testing ppm creation" << std::endl;
 
     colour::Colour proj_col(1.0, 0.0, 0.0);    
-    canvas::Canvas c(900, 550);
+    ppm::PortablePixMap c({0, 0}, 900, 550);
 
     shapes::Projectile proj;
     shapes::Environment env;
@@ -22,13 +22,14 @@ void test_projectile(void)
         proj.set_head(proj.get_head() + env.get_gravity());
         proj.set_head(proj.get_head() + env.get_wind());
         
-        canvas::write_pixel(c,
-                            c.get_width() - proj.get_pose().y,
-                            c.get_height() - proj.get_pose().z,
-                            proj_col);
+        c.write_pixel(c.get_width() - proj.get_pose().y,
+                      c.get_height() - proj.get_pose().z,
+                      proj_col);
     }
 
-    touch_ppm(c);
+    std::vector<ppm::PortablePixMap> v;
+    v.push_back(c);
+    ppm::touch_ppm(v, "ray.ppm");
 
     std::cout << "Passed!" << std::endl;
 }
