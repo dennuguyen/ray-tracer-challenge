@@ -26,9 +26,9 @@ public:
     inline double & operator()(int x, int y) { return data[x * width + y]; };
 
 private:
-    std::vector<double> data;
     const int width;
     const int height;
+    std::vector<double> data;
 };
 
 // Equality Operations
