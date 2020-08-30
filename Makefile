@@ -34,7 +34,7 @@ EXEC_FILES = $(patsubst $(SRC_DIR_EXE)/%.cpp, $(BIN_DIR)/%, $(SRC_FILES_EXE))
 
 .PHONY: all directories exe lib bin show clean
 
-all: directories exe lib bin
+all: clean directories exe lib bin
 
 # Create directories
 directories:
