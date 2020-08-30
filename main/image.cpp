@@ -3,15 +3,35 @@
 
 #include "ppm.hpp"
 
-int main(int argc, char *argv[])
+#include "test_canvas.hpp"
+#include "test_colour.hpp"
+#include "test_matrix.hpp"
+#include "test_projectile.hpp"
+#include "test_ray.hpp"
+#include "test_transform.hpp"
+#include "test_tuple.hpp"
+
+int main(int argv, char *argc[])
 {
-    if (argc != 2)
+    if (argv < 2)
     {
-        std::cerr << "Incorrect number of arguments " << argc << std::endl;
+        std::cerr << "Incorrect number of arguments " << argv << std::endl;
         exit(EXIT_FAILURE);
     }
 
-    std::string file_name = argv[1];
+    for (int i = 0; i < argv; i++)
+    {
+        std::string arg = argc[i];
+        if (arg == "test_canvas") { test_canvas(); }
+        if (arg == "test_colour") { test_colour(); }
+        if (arg == "test_matrix") { test_matrix(); }
+        if (arg == "test_projectile") { test_projectile(); }
+        if (arg == "test_ray") { test_ray(); }
+        if (arg == "test_transform") { test_transform(); }
+        if (arg == "test_tuple") { test_tuple(); }
+    }
+
+    std::string file_name = "hello.ppm";
     long unsigned int file_type = file_name.find_last_of(".");
     if (file_type == std::string::npos)
     {
@@ -26,8 +46,8 @@ int main(int argc, char *argv[])
     }
 
     std::vector<ppm::PortablePixMap> canvas;
-    ppm::PortablePixMap map({0, 0}, 720, 720);
-    ppm::PortablePixMap mm({0, 0}, 300, 300, colour::NONE);
+    ppm::PortablePixMap map(720, 720);
+    ppm::PortablePixMap mm(300, 300, colour::NONE);
 
     // map.draw_line({100, 100}, {10, 20}, colour::BLUE, 100);
     // map.draw_box({100, 100}, 100, 200, colour::BLUE);
