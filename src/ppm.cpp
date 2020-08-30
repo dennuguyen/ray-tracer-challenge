@@ -22,6 +22,19 @@ static uint scale_rgb(double input)
 
 namespace ppm
 {
+    PortablePixMap::PortablePixMap(uint width_, uint height_)
+        : origin({0, 0}), width(width_), height(height_)
+    {
+        data.resize(width * height, colour::BLACK);
+    }
+
+    PortablePixMap::PortablePixMap(uint width_, uint height_, colour::Colour fill_)
+        : origin({0, 0}), width(width_), height(height_)
+    {
+        data.resize(width * height, fill_);
+    }
+
+
     PortablePixMap::PortablePixMap(std::pair<uint, uint> origin_, uint width_, uint height_)
         : origin(origin_), width(width_), height(height_)
     {

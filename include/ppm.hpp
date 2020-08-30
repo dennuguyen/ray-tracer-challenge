@@ -12,6 +12,8 @@
 namespace ppm {
 class PortablePixMap {
    public:
+    PortablePixMap(uint width_, uint height_);
+    PortablePixMap(uint width_, uint height_, colour::Colour fill_);
     PortablePixMap(std::pair<uint, uint> origin_, uint width_, uint height_);
     PortablePixMap(std::pair<uint, uint> origin_, uint width_, uint height_, colour::Colour fill_);
     ~PortablePixMap();
