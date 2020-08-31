@@ -489,8 +489,8 @@ void test_matrix_inverse_proof(void)
 
     matrix::Matrix c = a * b;
 
-    dump_matrix(c * inverse(b));
-    dump_matrix(a);
+    // dump_matrix(c * inverse(b));
+    // dump_matrix(a);
 
     std::cout << "Passed!" << std::endl;
 }
