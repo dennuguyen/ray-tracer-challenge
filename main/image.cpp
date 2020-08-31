@@ -24,6 +24,19 @@ int main(int argv, char *argc[])
     for (int i = 0; i < argv; i++)
     {
         std::string arg = argc[i];
+        if (arg == "test_all")
+        {
+            test_canvas();
+            test_colour();
+            test_intersection();
+            test_matrix();
+            test_matrix_transform();
+            test_projectile();
+            test_ray();
+            test_ray_transform();
+            test_tuple();
+            break;
+        }
         if (arg == "test_canvas") { test_canvas(); }
         if (arg == "test_colour") { test_colour(); }
         if (arg == "test_intersection") { test_intersection(); }
@@ -35,7 +48,7 @@ int main(int argv, char *argc[])
         if (arg == "test_tuple") { test_tuple(); }
     }
 
-    std::string file_name = "hello.ppm";
+    std::string file_name = "ray.ppm";
     long unsigned int file_type = file_name.find_last_of(".");
     if (file_type == std::string::npos)
     {
