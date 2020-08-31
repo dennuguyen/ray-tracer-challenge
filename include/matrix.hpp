@@ -51,6 +51,14 @@ inline bool operator!=(Matrix a, Matrix b) { return !(is_equal_matrix(a, b)); };
 inline Matrix operator*(Matrix a, Matrix b) { return matrix_multiply(a, b); };
 inline tuple::Tuple operator*(Matrix m, tuple::Tuple t) { return tuple_multiply(m, t); };
 
+// Transform Operations
+Matrix translate(double x, double y, double z);
+Matrix scale(double x, double y, double z);
+Matrix rotate_x(double r);
+Matrix rotate_y(double r);
+Matrix rotate_z(double r);
+Matrix shear(double x_y, double x_z, double y_x, double y_z, double z_x, double z_y);
+
 } // namespace matrix
 
 #endif // MATRIX_HPP_
