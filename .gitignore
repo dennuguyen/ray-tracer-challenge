@@ -1,6 +1,7 @@
 # Ignoring binaries
 *
 !*.*
+!*/
 
 # Prerequisites
 *.d
