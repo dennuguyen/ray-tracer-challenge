@@ -1,7 +1,7 @@
 Ray Tracer
 
 Progress so far:
-![red_circle](red_circle.ppm)
+![red_circle](red_circle.png)
 
 PPM ADT Supports:
 - Layered objects
