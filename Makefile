@@ -5,7 +5,7 @@
 # URL: https://stackoverflow.com/a/23859765/13133452
 
 # Compiler Flags
-CC      = g++
+CC      = clang++
 CFLAGS  = -Wall -Werror -g -Iinclude
 LDFLAGS = -Llib
 
