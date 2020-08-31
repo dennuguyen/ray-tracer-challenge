@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "matrix.hpp"
+#include "utils.hpp"
 
 namespace matrix
 {
@@ -51,12 +52,12 @@ const std::vector<double> Matrix::get_row(int x)
 
 bool is_equal_matrix(Matrix a, Matrix b)
 {
-    if (a.get_width() != b.get_width() || a.get_height() != b.get_height())
+    if (a.get_width() != b.get_width() && a.get_height() != b.get_height())
         return false;
 
     for (int i = 0; i < a.get_width(); i++)
         for (int j = 0; j < a.get_height(); j++)
-            if (a(i, j) != b(i, j))
+            if (d_cmp(a(i, j), b(i, j), EPSILON) == false)
                 return false;
 
     return true;

@@ -1,6 +1,7 @@
 #ifndef MATRIX_HPP_
 #define MATRIX_HPP_
 
+#include <limits>
 #include <vector>
 
 #include "tuple.hpp"
@@ -9,6 +10,8 @@
 
 namespace matrix
 {
+const double EPSILON = 1e2 * std::numeric_limits<double>::epsilon();
+
 class Matrix
 {
 public:
