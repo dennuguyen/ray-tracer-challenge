@@ -2,6 +2,11 @@
 #include <string>
 
 #include "ppm.hpp"
+#include "ray.hpp"
+#include "shape.hpp"
+#include "sphere.hpp"
+#include "intersection.hpp"
+#include "tuple.hpp"
 
 #include "test_canvas.hpp"
 #include "test_colour.hpp"
@@ -48,7 +53,7 @@ int main(int argv, char *argc[])
         if (arg == "test_tuple") { test_tuple(); }
     }
 
-    std::string file_name = "ray.ppm";
+    std::string file_name = argc[1];
     long unsigned int file_type = file_name.find_last_of(".");
     if (file_type == std::string::npos)
     {
@@ -62,21 +67,36 @@ int main(int argv, char *argc[])
         exit(EXIT_FAILURE);
     }
 
+    //////////////////////////////////////////////////////////////////////////
     std::vector<ppm::PortablePixMap> canvas;
-    ppm::PortablePixMap map(720, 720);
-    ppm::PortablePixMap mm(300, 300, colour::NONE);
+    ppm::PortablePixMap map(100, 100);
 
-    // map.draw_line({100, 100}, {10, 20}, colour::BLUE, 100);
-    // map.draw_box({100, 100}, 100, 200, colour::BLUE);
-    mm.draw_letter({50, 100}, alphabet::THREE, 7, colour::RED);
-    map.draw_letter({50, 100}, alphabet::FOUR, 7, colour::BLUE);
-    map.draw_letter({100, 100}, alphabet::FIVE, 7, colour::BLUE);
-    map.draw_letter({150, 100}, alphabet::SIX, 7, colour::BLUE);
-    map.draw_letter({200, 100}, alphabet::NINE, 7, colour::BLUE);
-    map.draw_letter({250, 100}, alphabet::ZERO, 7, colour::BLUE);
+    double wall_z = 10.0;
+    double wall_size = 7.0;
+    double pixel_size = wall_size / 100;
+    tuple::Tuple ray_origin = tuple::make_point(0, 0, -5);
+    shape::Sphere s;
+
+    for (int y = 0; y < 100; y++)
+    {
+        double world_y = (wall_size / 2) - (pixel_size * y);
+        for (int x = 0; x < 100; x++)
+        {
+            double world_x = -(wall_size / 2) + (pixel_size * x);
+            tuple::Tuple position = tuple::make_point(world_x, world_y, wall_z);
+            ray::Ray r(ray_origin, tuple::normalise(position - ray_origin));
+            std::vector<intersection::Intersection> xs = intersection::intersect(s, r);
+
+            if (intersection::hit(xs).empty == false)
+            {
+                map.write_pixel(x, y, colour::RED);
+            }
+        }
+    }
 
     canvas.push_back(map);
-    canvas.push_back(mm);
     ppm::touch_ppm(canvas, file_name);
+    //////////////////////////////////////////////////////////////////////////
+
     return EXIT_SUCCESS;
 }
