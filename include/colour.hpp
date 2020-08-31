@@ -8,12 +8,13 @@ struct Colour {
     Colour(double r_, double g_, double b_);
     ~Colour();
 
-    inline bool operator==(Colour col) { return (r == col.r && g == col.g && b == col.b); };
-
     double r;
     double g;
     double b;
 };
+
+bool is_same_colour(Colour a, Colour b);
+inline bool operator==(Colour a, Colour b) { return is_same_colour(a, b); };
 
 Colour add(Colour a, Colour b);
 Colour minus(Colour a, Colour b);

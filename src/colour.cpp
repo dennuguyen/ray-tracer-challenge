@@ -7,6 +7,11 @@ Colour::Colour(double r_, double g_, double b_)
 
 Colour::~Colour() {}
 
+bool is_same_colour(Colour a, Colour b)
+{
+    return (a.r == b.r && a.g == b.g && a.b == b.b);
+}
+
 Colour add(Colour a, Colour b)
 {
     return Colour(a.r + b.r,
