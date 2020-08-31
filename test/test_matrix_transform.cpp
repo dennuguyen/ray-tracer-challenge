@@ -112,8 +112,6 @@ void test_matrix_rotate_x(void)
     tuple::Tuple p2 = tuple::make_point(0, sqrt(2) / 2, sqrt(2) / 2);
     tuple::Tuple p3 = tuple::make_point(0, 0, 1);
 
-    tuple::dump(matrix::rotate_x(M_PI / 4) * p1);
-
     assert(matrix::rotate_x(M_PI / 4) * p1 == p2);
     assert(matrix::rotate_x(M_PI / 2) * p1 == p3);
 
