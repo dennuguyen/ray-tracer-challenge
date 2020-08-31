@@ -11,12 +11,9 @@ Tuple::Tuple(double x_, double y_, double z_, bool w_)
     , y(y_)
     , z(z_)
     , w(w_)
-{
-}
+{}
 
-Tuple::~Tuple(void)
-{
-}
+Tuple::~Tuple(void) {}
 
 Tuple make_point(double x_, double y_, double z_)
 {
@@ -130,6 +127,16 @@ Tuple cross(Tuple a, Tuple b)
                  a.z * b.x - a.x * b.z,
                  a.x * b.y - a.y * b.x,
                  IS_VECTOR);
+}
+
+void dump_tuple(Tuple a)
+{
+    std::cout << std::endl;
+    std::cout << a.x << " ";
+    std::cout << a.y << " ";
+    std::cout << a.z << " ";
+    std::cout << a.w << " ";
+    std::cout << std::endl;
 }
 
 } // namespace tuple
