@@ -1,3 +1,7 @@
+# Ignoring binaries
+*
+!*.*
+
 # Prerequisites
 *.d
 
@@ -33,4 +37,4 @@
 
 # Other
 .vscode
-bin/*
+*.tmp
