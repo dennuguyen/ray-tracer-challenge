@@ -22,11 +22,6 @@ namespace intersection
         return (a.obj == b.obj && a.t == b.t);
     }
 
-    bool is_hit(Intersection a, Intersection b)
-    {
-        return (a.t >= 0 && a.t < b.t);
-    }
-
     Intersection hit(std::vector<Intersection> v)
     {
         Intersection min;
@@ -41,7 +36,7 @@ namespace intersection
             return min;
 
         for (auto & i : v)
-            if (is_hit(i, min) == true)
+            if (i.t >= 0 && i.t < min.t)
                 min = i;
 
         return min;
