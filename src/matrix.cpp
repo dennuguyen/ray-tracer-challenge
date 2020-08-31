@@ -13,17 +13,14 @@ Matrix::Matrix(std::initializer_list<std::initializer_list<double>> row_list)
     data.reserve(width * height);
 
     for (auto const & row : row_list)
-    {
         data.insert(data.cend(), row);
-    }
 }
 
 Matrix::Matrix(int width_, int height_, std::vector<double> data_)
     : width(width_)
     , height(height_)
     , data(data_)
-{
-}
+{}
 
 Matrix::Matrix(int width_, int height_)
     : width(width_)
@@ -32,29 +29,14 @@ Matrix::Matrix(int width_, int height_)
     data.resize(width * height);
 
     for (int i = 0; i < width; i++)
-    {
         data[i * width + i] = 1.0;
-    }
 }
 
-Matrix::~Matrix(void)
-{
-}
+Matrix::~Matrix(void) {}
 
-const std::vector<double> Matrix::get_data(void)
-{
-    return data;
-}
-
-const int Matrix::get_width(void)
-{
-    return width;
-}
-
-const int Matrix::get_height(void)
-{
-    return height;
-}
+const std::vector<double> Matrix::get_data(void) { return data; }
+const int Matrix::get_width(void) { return width; }
+const int Matrix::get_height(void) { return height; }
 
 const std::vector<double> Matrix::get_row(int x)
 {
@@ -68,20 +50,12 @@ const std::vector<double> Matrix::get_row(int x)
 bool is_equal_matrix(Matrix a, Matrix b)
 {
     if (a.get_width() != b.get_width() || a.get_height() != b.get_height())
-    {
         return false;
-    }
 
     for (int i = 0; i < a.get_width(); i++)
-    {
         for (int j = 0; j < a.get_height(); j++)
-        {
             if (a(i, j) != b(i, j))
-            {
                 return false;
-            }
-        }
-    }
 
     return true;
 }
@@ -93,15 +67,11 @@ Matrix matrix_multiply(Matrix a, Matrix b)
     Matrix m(a.get_width(), a.get_height());
 
     for (int i = 0; i < a.get_width(); i++)
-    {
         for (int j = 0; j < b.get_height(); j++)
-        {
             m(i, j) = a(i, 0) * b(0, j) +
                       a(i, 1) * b(1, j) +
                       a(i, 2) * b(2, j) +
                       a(i, 3) * b(3, j);
-        }
-    }
 
     return m;
 }
@@ -139,16 +109,12 @@ Matrix transpose(Matrix a)
 double determinant(Matrix a)
 {
     if (a.get_width() == 2 && a.get_height() == 2)
-    {
         return a(0, 0) * a(1, 1) - a(0, 1) * a(1, 0);
-    }
 
     double det = 0;
 
     for (int i = 0; i < a.get_width(); i++)
-    {
         det += a(0, i) * cofactor(a, 0, i);
-    }
 
     return det;
 }
@@ -158,15 +124,9 @@ Matrix submatrix(Matrix a, int row, int col)
     std::vector<double> data;
 
     for (int i = 0; i < a.get_width(); i++)
-    {
         for (int j = 0; j < a.get_height(); j++)
-        {
             if (i != row && j != col)
-            {
                 data.push_back(a(i, j));
-            }
-        }
-    }
 
     return Matrix(a.get_width() - 1, a.get_height() - 1, data);
 }
@@ -179,9 +139,7 @@ double minor(Matrix a, int row, int col)
 double cofactor(Matrix a, int row, int col)
 {
     if ((row + col) % 2 == 0)
-    {
         return minor(a, row, col);
-    }
     
     return -minor(a, row, col);
 }
@@ -193,31 +151,10 @@ Matrix inverse(Matrix a)
     Matrix b(a.get_width(), a.get_height());
     
     for (int i = 0; i < a.get_width(); i++)
-    {
         for (int j = 0; j < a.get_height(); j++)
-        {
             b(j, i) = cofactor(a, i, j) / determinant(a);
-        }
-    }
 
     return b;
-}
-
-void dump_matrix(Matrix a)
-{
-    std::cout << std::endl;
-
-    for (int i = 0; i < a.get_width(); i++)
-    {
-        for (int j = 0; j < a.get_height(); j++)
-        {
-            std::cout << a(i, j) << " ";
-        }
-
-        std::cout << std::endl;
-    }
-
-    std::cout << std::endl;
 }
 
 Matrix translate(double x, double y, double z)
@@ -290,6 +227,21 @@ Matrix shear(double x_y, double x_z, double y_x, double y_z, double z_x, double 
     m(2, 1) = z_y;
 
     return m;
+}
+
+void dump_matrix(Matrix a)
+{
+    std::cout << std::endl;
+
+    for (int i = 0; i < a.get_width(); i++)
+    {
+        for (int j = 0; j < a.get_height(); j++)
+            std::cout << a(i, j) << " ";
+
+        std::cout << std::endl;
+    }
+
+    std::cout << std::endl;
 }
 
 } // namespace matrix
