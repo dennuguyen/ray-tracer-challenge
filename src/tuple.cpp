@@ -124,7 +124,7 @@ Tuple cross(Tuple a, Tuple b)
                  IS_VECTOR);
 }
 
-void dump_tuple(Tuple a)
+void dump(Tuple a)
 {
     std::cout << std::endl;
     std::cout << a.x << " ";

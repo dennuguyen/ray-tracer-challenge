@@ -60,7 +60,7 @@ Matrix rotate_z(double r);
 Matrix shear(double x_y, double x_z, double y_x, double y_z, double z_x, double z_y);
 
 // Debugging
-void dump_matrix(Matrix a);
+void dump(Matrix a);
 
 } // namespace matrix
 

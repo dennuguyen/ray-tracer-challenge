@@ -407,7 +407,7 @@ void test_matrix_inverse(void)
 
     matrix::Matrix b = inverse(a);
 
-    // dump_matrix(b);
+    // dump(b);
 
     matrix::Matrix b_ans
     {
@@ -434,7 +434,7 @@ void test_further_matrix_inverse(void)
     
     matrix::Matrix b = inverse(a);
 
-    // dump_matrix(b);
+    // dump(b);
 
     matrix::Matrix b_ans
     {
@@ -454,7 +454,7 @@ void test_further_matrix_inverse(void)
     
     matrix::Matrix d = inverse(c);
 
-    // dump_matrix(d);
+    // dump(d);
 
     matrix::Matrix d_ans
     {
@@ -489,8 +489,8 @@ void test_matrix_inverse_proof(void)
 
     matrix::Matrix c = a * b;
 
-    // dump_matrix(c * inverse(b));
-    // dump_matrix(a);
+    // dump(c * inverse(b));
+    // dump(a);
 
     std::cout << "Passed!" << std::endl;
 }

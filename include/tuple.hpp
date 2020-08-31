@@ -48,7 +48,7 @@ inline Tuple operator*(Tuple a, double scalar) { return scalar_multiply(a, scala
 inline Tuple operator/(Tuple a, double scalar) { return scalar_divide(a, scalar); };
 
 // Debugging
-void dump_tuple(Tuple a);
+void dump(Tuple a);
 
 } // namespace tuple
 
