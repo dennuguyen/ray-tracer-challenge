@@ -1,12 +1,12 @@
 #ifndef TUPLE_HPP_
 #define TUPLE_HPP_
 
-#define IS_POINT 1.0
-#define IS_VECTOR 0.0
-#define EPSILON 1e-16
-
 namespace tuple
 {
+const double IS_POINT = 1.0;
+const double IS_VECTOR = 0.0;
+const double EPSILON = 1e-12;
+
 struct Tuple
 {
 public:
@@ -24,7 +24,6 @@ Tuple make_point(double x_, double y_, double z_);
 Tuple make_vector(double x_, double y_, double z_);
 
 // Equality Operations
-bool is_equal_value(double a, double b);
 bool is_equal_tuple(Tuple a, Tuple b);
 
 // Tuple Operations

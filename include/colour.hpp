@@ -1,9 +1,11 @@
 #ifndef COLOUR_HPP_
 #define COLOUR_HPP_
 
-#define NOFILL -1.0
+namespace colour
+{
+const double NOFILL = -1.0;
+const double EPSILON = 1e-12;
 
-namespace colour {
 struct Colour {
     Colour(double r_, double g_, double b_);
     ~Colour();

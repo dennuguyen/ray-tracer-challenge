@@ -1,8 +1,8 @@
 #include <cassert>
-#include <cmath>
 #include <iostream>
 
 #include "tuple.hpp"
+#include "utils.hpp"
 
 namespace tuple
 {
@@ -25,17 +25,12 @@ Tuple make_vector(double x_, double y_, double z_)
     return Tuple(x_, y_, z_, 0.0);
 }
 
-bool is_equal_value(double a, double b)
-{
-    return std::abs(a - b) < EPSILON ? true : false;
-}
-
 bool is_equal_tuple(Tuple a, Tuple b)
 {
-    if (is_equal_value(a.x, b.x) &&
-        is_equal_value(a.y, b.y) &&
-        is_equal_value(a.z, b.z) &&
-        is_equal_value(a.w, b.w))
+    if (dabs(a.x, b.x, EPSILON) &&
+        dabs(a.y, b.y, EPSILON) &&
+        dabs(a.z, b.z, EPSILON) &&
+        dabs(a.w, b.w, EPSILON))
     {
         return true;
     }

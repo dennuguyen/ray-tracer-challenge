@@ -6,6 +6,7 @@
 #include "projectile.hpp"
 #include "test_tuple.hpp"
 #include "tuple.hpp"
+#include "utils.hpp"
 
 void test_tuple(void)
 {
@@ -58,7 +59,8 @@ void test_is_equal_value(void)
 {
     std::cout << "Testing equality of values" << std::endl;
 
-    assert(tuple::is_equal_value(1, 1 - EPSILON));
+    std::cout << std::fabs(1 - tuple::EPSILON) << std::endl;
+    assert(dabs(1, 1 - tuple::EPSILON, tuple::EPSILON));
 
     std::cout << "Passed!" << std::endl;
 }
@@ -68,7 +70,7 @@ void test_is_equal_tuple(void)
     std::cout << "Testing equality of tuples" << std::endl;
 
     tuple::Tuple a1(4.3, -4.2, 3.1, 1.0);
-    tuple::Tuple a2(4.3 + EPSILON, -4.2 - EPSILON, 3.1 - EPSILON, 1.0);
+    tuple::Tuple a2(4.3 + tuple::EPSILON, -4.2 - tuple::EPSILON, 3.1 - tuple::EPSILON, 1.0);
 
     assert(tuple::is_equal_tuple(a1, a2));
 

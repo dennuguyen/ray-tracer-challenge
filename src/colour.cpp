@@ -1,4 +1,5 @@
 #include "colour.hpp"
+#include "utils.hpp"
 
 namespace colour {
 Colour::Colour(double r_, double g_, double b_)
@@ -9,7 +10,9 @@ Colour::~Colour() {}
 
 bool is_same_colour(Colour a, Colour b)
 {
-    return (a.r == b.r && a.g == b.g && a.b == b.b);
+    return dabs(a.r, b.r, EPSILON)
+        && dabs(a.g, b.g, EPSILON)
+        && dabs(a.b, b.b, EPSILON);
 }
 
 Colour add(Colour a, Colour b)

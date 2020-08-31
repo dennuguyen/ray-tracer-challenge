@@ -9,7 +9,7 @@
 
 static uint scale_rgb(double input)
 {
-    if (input == NOFILL)
+    if (input == colour::NOFILL)
         return input;
 
     if (input < 0.0)
