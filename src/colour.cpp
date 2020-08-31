@@ -10,9 +10,9 @@ Colour::~Colour() {}
 
 bool is_same_colour(Colour a, Colour b)
 {
-    return dabs(a.r, b.r, EPSILON)
-        && dabs(a.g, b.g, EPSILON)
-        && dabs(a.b, b.b, EPSILON);
+    return d_cmp(a.r, b.r, EPSILON)
+        && d_cmp(a.g, b.g, EPSILON)
+        && d_cmp(a.b, b.b, EPSILON);
 }
 
 Colour add(Colour a, Colour b)

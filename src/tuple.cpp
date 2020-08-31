@@ -27,10 +27,10 @@ Tuple make_vector(double x_, double y_, double z_)
 
 bool is_equal_tuple(Tuple a, Tuple b)
 {
-    if (dabs(a.x, b.x, EPSILON) &&
-        dabs(a.y, b.y, EPSILON) &&
-        dabs(a.z, b.z, EPSILON) &&
-        dabs(a.w, b.w, EPSILON))
+    if (d_cmp(a.x, b.x, EPSILON) &&
+        d_cmp(a.y, b.y, EPSILON) &&
+        d_cmp(a.z, b.z, EPSILON) &&
+        d_cmp(a.w, b.w, EPSILON))
     {
         return true;
     }

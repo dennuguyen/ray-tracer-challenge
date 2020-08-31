@@ -60,7 +60,7 @@ void test_is_equal_value(void)
     std::cout << "Testing equality of values" << std::endl;
 
     std::cout << std::fabs(1 - tuple::EPSILON) << std::endl;
-    assert(dabs(1, 1 - tuple::EPSILON, tuple::EPSILON));
+    assert(d_cmp(1, 1 - tuple::EPSILON, tuple::EPSILON));
 
     std::cout << "Passed!" << std::endl;
 }

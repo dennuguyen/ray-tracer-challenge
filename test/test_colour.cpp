@@ -51,9 +51,9 @@ void test_colour_minus(void)
     colour::Colour c2(0.7, 0.1, 0.25);
     colour::Colour c3 = colour::minus(c1, c2);
 
-    assert(dabs(c3.r, 0.2, colour::EPSILON));
-    assert(dabs(c3.g, 0.5, colour::EPSILON));
-    assert(dabs(c3.b, 0.5, colour::EPSILON));
+    assert(d_cmp(c3.r, 0.2, colour::EPSILON));
+    assert(d_cmp(c3.g, 0.5, colour::EPSILON));
+    assert(d_cmp(c3.b, 0.5, colour::EPSILON));
 
     std::cout << "Passed!" << std::endl;
 }
@@ -65,9 +65,9 @@ void test_colour_scalar_multiply(void)
     colour::Colour c1(0.2, 0.3, 0.4);
     colour::Colour c2 = colour::scalar_multiply(c1, 2);
 
-    assert(dabs(c2.r, 0.4, colour::EPSILON));
-    assert(dabs(c2.g, 0.6, colour::EPSILON));
-    assert(dabs(c2.b, 0.8, colour::EPSILON));
+    assert(d_cmp(c2.r, 0.4, colour::EPSILON));
+    assert(d_cmp(c2.g, 0.6, colour::EPSILON));
+    assert(d_cmp(c2.b, 0.8, colour::EPSILON));
 
     std::cout << "Passed!" << std::endl;
 }
@@ -80,9 +80,9 @@ void test_colour_multiply(void)
     colour::Colour c2(0.9, 1, 0.1);
     colour::Colour c3 = colour::colour_multiply(c1, c2);
 
-    assert(dabs(c3.r, 0.9, colour::EPSILON));
-    assert(dabs(c3.g, 0.2, colour::EPSILON));
-    assert(dabs(c3.b, 0.04, colour::EPSILON));
+    assert(d_cmp(c3.r, 0.9, colour::EPSILON));
+    assert(d_cmp(c3.g, 0.2, colour::EPSILON));
+    assert(d_cmp(c3.b, 0.04, colour::EPSILON));
 
     std::cout << "Passed!" << std::endl;
 }
