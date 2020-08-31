@@ -1,7 +1,7 @@
 #ifndef RAY_HPP_
 #define RAY_HPP_
 
-#include "shape.hpp"
+#include "matrix.hpp"
 #include "tuple.hpp"
 
 namespace ray
@@ -18,8 +18,8 @@ public:
     tuple::Tuple vector;
 };
 
-std::vector<double> intersect(shape::Sphere s, Ray r);
-// bool hit(shape::Sphere s, Ray r);
+// Transform Operations
+Ray transform(Ray r, matrix::Matrix m);
 
 } // namespace ray
 
