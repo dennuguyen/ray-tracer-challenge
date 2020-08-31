@@ -22,7 +22,7 @@ void test_intersection_creation(void)
     std::cout << "Testing intersection creation" << std::endl;
 
     shape::Sphere s;
-    intersection::Intersection i(s, {3.5});
+    intersection::Intersection i(s, 3.5);
 
     assert(i.obj == s);
     assert(i.t == 3.5);
@@ -35,8 +35,8 @@ void test_intersection_list(void)
     std::cout << "Testing intersection list" << std::endl;
 
     shape::Sphere s;
-    intersection::Intersection i1(s, {1});
-    intersection::Intersection i2(s, {2});
+    intersection::Intersection i1(s, 1);
+    intersection::Intersection i2(s, 2);
 
     std::vector<intersection::Intersection> xs = {i1, i2};
 
