@@ -1,15 +1,17 @@
 #ifndef INTERSECTION_HPP_
 #define INTERSECTION_HPP_
 
+#include "ray.hpp"
 #include "shape.hpp"
+#include "sphere.hpp"
 
 namespace intersection
 {
     struct Intersection
     {
-        Intersection();
+        Intersection(void);
         Intersection(shape::Shape obj_, double t_);
-        ~Intersection();
+        ~Intersection(void);
 
         bool empty;
         shape::Shape obj;
