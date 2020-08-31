@@ -3,7 +3,7 @@
 
 #define IS_POINT 1.0
 #define IS_VECTOR 0.0
-#define EPSILON 1e-12
+#define EPSILON 1e-32
 
 namespace tuple
 {
@@ -47,6 +47,9 @@ inline Tuple operator-(Tuple a, Tuple b) { return minus(a, b); };
 inline Tuple operator-(Tuple a) { return negate(a); };
 inline Tuple operator*(Tuple a, double scalar) { return scalar_multiply(a, scalar); };
 inline Tuple operator/(Tuple a, double scalar) { return scalar_divide(a, scalar); };
+
+// Debugging
+void dump_tuple(Tuple a);
 
 } // namespace tuple
 
