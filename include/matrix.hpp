@@ -26,8 +26,8 @@ public:
     inline double & operator()(int x, int y) { return data[x * width + y]; };
 
 private:
-    const int width;
-    const int height;
+    int width;
+    int height;
     std::vector<double> data;
 };
 
@@ -43,7 +43,6 @@ Matrix submatrix(Matrix a, int row, int col);
 double minor(Matrix a, int row, int col);
 double cofactor(Matrix a, int row, int col);
 Matrix inverse(Matrix a);
-void dump_matrix(Matrix a);
 
 // Overloaded Operators
 inline bool operator==(Matrix a, Matrix b) { return is_equal_matrix(a, b); };
@@ -58,6 +57,9 @@ Matrix rotate_x(double r);
 Matrix rotate_y(double r);
 Matrix rotate_z(double r);
 Matrix shear(double x_y, double x_z, double y_x, double y_z, double z_x, double z_y);
+
+// Debugging
+void dump_matrix(Matrix a);
 
 } // namespace matrix
 
