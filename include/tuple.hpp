@@ -1,11 +1,13 @@
 #ifndef TUPLE_HPP_
 #define TUPLE_HPP_
 
+#include <limits>
+
 namespace tuple
 {
 const double IS_POINT = 1.0;
 const double IS_VECTOR = 0.0;
-const double EPSILON = 1e-12;
+const double EPSILON = 100 * std::numeric_limits<double>::epsilon();
 
 struct Tuple
 {

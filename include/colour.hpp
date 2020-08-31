@@ -1,10 +1,12 @@
 #ifndef COLOUR_HPP_
 #define COLOUR_HPP_
 
+#include <limits>
+
 namespace colour
 {
 const double NOFILL = -1.0;
-const double EPSILON = 1e-12;
+const double EPSILON = 100 * std::numeric_limits<double>::epsilon();
 
 struct Colour {
     Colour(double r_, double g_, double b_);
