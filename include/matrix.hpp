@@ -12,6 +12,7 @@ namespace matrix
 class Matrix
 {
 public:
+    Matrix(void);
     Matrix(std::initializer_list<std::initializer_list<double>> row_list);
     Matrix(int width_, int height_, std::vector<double> data_);
     Matrix(int width_, int height_);

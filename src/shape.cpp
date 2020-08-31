@@ -7,7 +7,7 @@ int global_id = 0;
 Shape::Shape(void)
     : empty(true)
     , id(global_id++)
-    , transform(matrix::Matrix(3, 3))
+    , transform(matrix::Matrix())
 {}
 
 Shape::~Shape(void) {}

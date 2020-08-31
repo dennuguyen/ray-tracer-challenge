@@ -56,7 +56,7 @@ void test_sphere_transform(void)
 
     shape::Sphere s;
 
-    assert(s.get_transform() == matrix::Matrix(3, 3));
+    assert(s.get_transform() == matrix::Matrix());
 
     matrix::Matrix t = matrix::translate(2, 3, 4);
     s.set_transform(t);

@@ -6,6 +6,8 @@
 
 namespace matrix
 {
+Matrix::Matrix(void) : Matrix(4, 4) {}
+
 Matrix::Matrix(std::initializer_list<std::initializer_list<double>> row_list)
     : width(row_list.size())
     , height(row_list.begin()->size())
