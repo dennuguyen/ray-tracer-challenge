@@ -1,4 +1,5 @@
 #include <cassert>
+#include <cmath>
 #include <iostream>
 
 #include "colour.hpp"
@@ -49,10 +50,10 @@ void test_colour_minus(void)
     colour::Colour c1(0.9, 0.6, 0.75);
     colour::Colour c2(0.7, 0.1, 0.25);
     colour::Colour c3 = colour::minus(c1, c2);
-
-    assert(std::abs(c3.r - 0.2) < EPSILON);
-    assert(std::abs(c3.g - 0.5) < EPSILON);
-    assert(std::abs(c3.b - 0.5) < EPSILON);
+    
+    assert(std::fabs(c3.r - 0.2) < EPSILON);
+    assert(std::fabs(c3.g - 0.5) < EPSILON);
+    assert(std::fabs(c3.b - 0.5) < EPSILON);
 
     std::cout << "Passed!" << std::endl;
 }
@@ -64,9 +65,9 @@ void test_colour_scalar_multiply(void)
     colour::Colour c1(0.2, 0.3, 0.4);
     colour::Colour c2 = colour::scalar_multiply(c1, 2);
 
-    assert(std::abs(c2.r - 0.4) < EPSILON);
-    assert(std::abs(c2.g - 0.6) < EPSILON);
-    assert(std::abs(c2.b - 0.8) < EPSILON);
+    assert(std::fabs(c2.r - 0.4) < EPSILON);
+    assert(std::fabs(c2.g - 0.6) < EPSILON);
+    assert(std::fabs(c2.b - 0.8) < EPSILON);
 
     std::cout << "Passed!" << std::endl;
 }
@@ -79,9 +80,9 @@ void test_colour_multiply(void)
     colour::Colour c2(0.9, 1, 0.1);
     colour::Colour c3 = colour::colour_multiply(c1, c2);
 
-    assert(std::abs(c3.r - 0.9) < EPSILON);
-    assert(std::abs(c3.g - 0.2) < EPSILON);
-    assert(std::abs(c3.b - 0.4) < EPSILON);
+    assert(std::fabs(c3.r - 0.9) < EPSILON);
+    assert(std::fabs(c3.g - 0.2) < EPSILON);
+    assert(std::fabs(c3.b - 0.04) < EPSILON);
 
     std::cout << "Passed!" << std::endl;
 }
