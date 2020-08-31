@@ -1,6 +1,6 @@
-Simple paint program.
+Ray Tracer
 
-Supports:
+PPM ADT Supports:
 - Layered objects
 - No fill
 - Text
