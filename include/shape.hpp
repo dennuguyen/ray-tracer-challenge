@@ -1,10 +1,7 @@
 #ifndef SHAPE_HPP_
 #define SHAPE_HPP_
 
-#include <vector>
-
-#include "ray.hpp"
-#include "tuple.hpp"
+#include "matrix.hpp"
 
 namespace shape
 {
@@ -12,26 +9,17 @@ class Shape
 {
 public:
     Shape(void);
-    int get_id();
+    ~Shape(void);
+
+    const int get_id();
+    const matrix::Matrix get_transform();
+    
+    void set_transform(matrix::Matrix m);
 
 protected:
     bool empty;
     int id;
-};
-
-class Sphere : public Shape
-{
-    public:
-    Sphere(void);
-    Sphere(tuple::Tuple origin_, double radius_);
-    ~Sphere();
-
-    tuple::Tuple get_origin();
-    double get_radius();
-
-    private:
-    tuple::Tuple origin;
-    double radius;
+    matrix::Matrix transform;
 };
 
 bool is_same_shape_object(Shape a, Shape b);
