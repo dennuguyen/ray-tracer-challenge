@@ -1,4 +1,3 @@
-
 #include <algorithm>
 #include <cmath>
 #include <numeric>
@@ -31,7 +30,8 @@ namespace intersection
                 min = i;
                 break;
             }
-        
+
+        // Could not find any hits
         if (min.empty == true)
             return min;
 
