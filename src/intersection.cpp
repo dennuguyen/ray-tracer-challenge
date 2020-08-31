@@ -1,12 +1,13 @@
-#include "intersection.hpp"
 
 #include <algorithm>
 #include <cmath>
 #include <numeric>
 
+#include "intersection.hpp"
+
 namespace intersection
 {
-    Intersection::Intersection() : empty(true) {}
+    Intersection::Intersection(void) : empty(true) {}
 
     Intersection::Intersection(shape::Shape obj_, double t_)
         : empty(false)
@@ -14,7 +15,7 @@ namespace intersection
         , t(t_)
     {}
 
-    Intersection::~Intersection() {}
+    Intersection::~Intersection(void) {}
 
     bool is_same_intersection(Intersection a, Intersection b)
     {
@@ -48,6 +49,8 @@ namespace intersection
 
     std::vector<Intersection> intersect(shape::Sphere s, ray::Ray r)
     {
+        r = ray::transform(r, matrix::inverse(s.get_transform()));
+
         tuple::Tuple sphere_to_ray = r.origin - s.get_origin();
         double a = tuple::dot(r.vector, r.vector);
         double b = 2 * tuple::dot(r.vector, sphere_to_ray);
