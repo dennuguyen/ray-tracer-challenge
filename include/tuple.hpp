@@ -3,7 +3,7 @@
 
 #define IS_POINT 1.0
 #define IS_VECTOR 0.0
-#define EPSILON 1e-36
+#define EPSILON 1e-12
 
 namespace tuple
 {
@@ -33,6 +33,7 @@ Tuple minus(Tuple a, Tuple b);
 Tuple negate(Tuple a);
 Tuple scalar_multiply(Tuple a, double scalar);
 Tuple scalar_divide(Tuple a, double scalar);
+
 // Vector-specific Operations
 double magnitude(Tuple u);
 Tuple normalise(Tuple u);
