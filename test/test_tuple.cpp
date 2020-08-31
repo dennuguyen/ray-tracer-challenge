@@ -24,23 +24,6 @@ void test_tuple(void)
     test_normalise();
     test_dot_product();
     test_cross_product();
-
-    // shapes::Projectile proj;
-    // shapes::Environment env;
-
-    // while(1)
-    // {
-    //     if (proj.get_pose().y > 0)
-    //     {
-    //         proj.set_pose(tuple::add(proj.get_pose(), proj.get_head()));
-    //         proj.set_head(tuple::add(proj.get_head(), env.get_gravity()));
-    //         proj.set_head(tuple::add(proj.get_head(), env.get_wind()));
-    //     }
-        
-    //     std::cout << proj.get_pose().x << "\t";
-    //     std::cout << proj.get_pose().y << "\t";
-    //     std::cout << proj.get_pose().z << std::endl;
-    // }
 }
 
 void test_tuple_point(void)
