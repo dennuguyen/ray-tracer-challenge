@@ -3,26 +3,25 @@
 #include <cmath>
 
 #include "matrix.hpp"
-#include "test_transform.hpp"
-#include "transform.hpp"
+#include "test_matrix_transform.hpp"
 
-void test_transform(void)
+void test_matrix_transform(void)
 {
-    test_translation();
-    test_reverse_translation();
-    test_vector_translation();
-    test_point_scaling();
-    test_vector_scaling();
-    test_reverse_scaling();
-    test_reflection();
-    test_rotate_x();
-    test_rotate_y();
-    test_rotate_z();
-    test_shear();
-    test_chain_transforms();
+    test_matrix_translation();
+    test_matrix_reverse_translation();
+    test_matrix_vector_translation();
+    test_matrix_point_scaling();
+    test_matrix_vector_scaling();
+    test_matrix_reverse_scaling();
+    test_matrix_reflection();
+    test_matrix_rotate_x();
+    test_matrix_rotate_y();
+    test_matrix_rotate_z();
+    test_matrix_shear();
+    test_matrix_chain_transforms();
 }
 
-void test_translation(void)
+void test_matrix_translation(void)
 {
     std::cout << "Testing translation" << std::endl;
 
@@ -34,7 +33,7 @@ void test_translation(void)
     std::cout << "Passed!" << std::endl;
 }
 
-void test_reverse_translation(void)
+void test_matrix_reverse_translation(void)
 {
     std::cout << "Testing reverse translation" << std::endl;
 
@@ -46,7 +45,7 @@ void test_reverse_translation(void)
     std::cout << "Passed!" << std::endl;
 }
 
-void test_vector_translation(void)
+void test_matrix_vector_translation(void)
 {
     std::cout << "Testing vector translation" << std::endl;
 
@@ -57,7 +56,7 @@ void test_vector_translation(void)
     std::cout << "Passed!" << std::endl;
 }
 
-void test_point_scaling(void)
+void test_matrix_point_scaling(void)
 {
     std::cout << "Testing point scaling" << std::endl;
 
@@ -69,7 +68,7 @@ void test_point_scaling(void)
     std::cout << "Passed!" << std::endl;
 }
 
-void test_vector_scaling(void)
+void test_matrix_vector_scaling(void)
 {
     std::cout << "Testing vector scaling" << std::endl;
 
@@ -81,7 +80,7 @@ void test_vector_scaling(void)
     std::cout << "Passed!" << std::endl;
 }
 
-void test_reverse_scaling(void)
+void test_matrix_reverse_scaling(void)
 {
     std::cout << "Testing reverse scaling" << std::endl;
 
@@ -93,7 +92,7 @@ void test_reverse_scaling(void)
     std::cout << "Passed!" << std::endl;
 }
 
-void test_reflection(void)
+void test_matrix_reflection(void)
 {
     std::cout << "Testing reflection" << std::endl;
 
@@ -105,7 +104,7 @@ void test_reflection(void)
     std::cout << "Passed!" << std::endl;
 }
 
-void test_rotate_x(void)
+void test_matrix_rotate_x(void)
 {
     std::cout << "Testing rotation around x axis" << std::endl;
 
@@ -123,7 +122,7 @@ void test_rotate_x(void)
     std::cout << "Passed!" << std::endl;
 }
 
-void test_rotate_y(void)
+void test_matrix_rotate_y(void)
 {
     std::cout << "Testing rotation around y axis" << std::endl;
 
@@ -137,7 +136,7 @@ void test_rotate_y(void)
     std::cout << "Passed!" << std::endl;
 }
 
-void test_rotate_z(void)
+void test_matrix_rotate_z(void)
 {
     std::cout << "Testing rotation around z axis" << std::endl;
 
@@ -151,7 +150,7 @@ void test_rotate_z(void)
     std::cout << "Passed!" << std::endl;
 }
 
-void test_shear(void)
+void test_matrix_shear(void)
 {
     std::cout << "Testing shear" << std::endl;
 
@@ -188,7 +187,7 @@ void test_shear(void)
     std::cout << "Passed!" << std::endl;
 }
 
-void test_chain_transforms(void)
+void test_matrix_chain_transforms(void)
 {
     std::cout << "Testing chained transformations" << std::endl;
 
