@@ -6,7 +6,7 @@
 namespace colour
 {
 const double NOFILL = -1.0;
-const double EPSILON = 1e3 * std::numeric_limits<double>::epsilon();
+const double EPSILON = 1e12 * std::numeric_limits<double>::epsilon();
 
 struct Colour {
     Colour(double r_, double g_, double b_);
