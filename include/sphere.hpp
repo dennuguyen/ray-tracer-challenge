@@ -15,6 +15,7 @@ class Sphere : public Shape
 
     const tuple::Tuple get_origin();
     const double get_radius();
+    tuple::Tuple normal(tuple::Tuple point);
 
     private:
     tuple::Tuple origin;

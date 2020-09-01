@@ -15,4 +15,10 @@ Sphere::~Sphere() {}
 
 const tuple::Tuple Sphere::get_origin() { return origin; }
 const double Sphere::get_radius() { return radius; }
+
+tuple::Tuple Sphere::normal(tuple::Tuple point)
+{
+    return tuple::normalise(point - origin);
+}
+
 } // namespace shape
