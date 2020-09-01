@@ -37,7 +37,6 @@ Tuple make_vector(Tuple u)
     return u;
 }
 
-
 bool is_equal_tuple(Tuple a, Tuple b)
 {
     if (d_cmp(a.x, b.x, EPSILON) &&
@@ -135,6 +134,11 @@ Tuple cross(Tuple a, Tuple b)
                  a.z * b.x - a.x * b.z,
                  a.x * b.y - a.y * b.x,
                  IS_VECTOR);
+}
+
+Tuple reflect(Tuple v, Tuple n)
+{
+    return v - n * 2 * dot(v, n);
 }
 
 void dump(Tuple a)
