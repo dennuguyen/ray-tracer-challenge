@@ -10,7 +10,7 @@
 
 namespace matrix
 {
-const double EPSILON = 1e10 * std::numeric_limits<double>::epsilon();
+const double EPSILON = 1e11 * std::numeric_limits<double>::epsilon();
 
 class Matrix
 {

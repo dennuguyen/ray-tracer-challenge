@@ -7,7 +7,7 @@ namespace tuple
 {
 const double IS_POINT = 1.0;
 const double IS_VECTOR = 0.0;
-const double EPSILON = 1e10 * std::numeric_limits<double>::epsilon();
+const double EPSILON = 1e11 * std::numeric_limits<double>::epsilon();
 
 struct Tuple
 {
@@ -42,6 +42,7 @@ double magnitude(Tuple u);
 Tuple normalise(Tuple u);
 double dot(Tuple a, Tuple b);
 Tuple cross(Tuple a, Tuple b);
+Tuple reflect(Tuple v, Tuple n);
 
 // Overloaded Operators
 inline bool operator==(Tuple a, Tuple b) { return is_equal_tuple(a, b); };
