@@ -11,7 +11,7 @@
 #include "test_canvas.hpp"
 #include "test_colour.hpp"
 #include "test_intersection.hpp"
-#include "test_light.hpp"
+#include "test_shades.hpp"
 #include "test_matrix.hpp"
 #include "test_projectile.hpp"
 #include "test_ray.hpp"
@@ -33,12 +33,12 @@ int main(int argv, char *argc[])
         if (arg == "test_canvas") test_canvas();
         if (arg == "test_colour") test_colour();
         if (arg == "test_intersection") test_intersection();
-        if (arg == "test_light") test_light();
         if (arg == "test_matrix") test_matrix();
         if (arg == "test_matrix_transform") test_matrix_transform();
         if (arg == "test_projectile") test_projectile();
         if (arg == "test_ray") test_ray();
         if (arg == "test_ray_transform") test_ray_transform();
+        if (arg == "test_shades") test_shades();
         if (arg == "test_tuple") test_tuple();
     }
 
