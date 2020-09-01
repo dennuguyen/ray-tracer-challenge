@@ -17,13 +17,26 @@ Tuple::~Tuple(void) {}
 
 Tuple make_point(double x_, double y_, double z_)
 {
-    return Tuple(x_, y_, z_, 1.0);
+    return Tuple(x_, y_, z_, IS_POINT);
+}
+
+Tuple make_point(Tuple u)
+{
+    u.w = IS_POINT;
+    return u;
 }
 
 Tuple make_vector(double x_, double y_, double z_)
 {
-    return Tuple(x_, y_, z_, 0.0);
+    return Tuple(x_, y_, z_, IS_VECTOR);
 }
+
+Tuple make_vector(Tuple u)
+{
+    u.w = IS_VECTOR;
+    return u;
+}
+
 
 bool is_equal_tuple(Tuple a, Tuple b)
 {

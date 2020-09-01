@@ -23,7 +23,9 @@ public:
 
 // Point & Vector Factory
 Tuple make_point(double x_, double y_, double z_);
+Tuple make_point(Tuple u);
 Tuple make_vector(double x_, double y_, double z_);
+Tuple make_vector(Tuple u);
 
 // Equality Operations
 bool is_equal_tuple(Tuple a, Tuple b);
