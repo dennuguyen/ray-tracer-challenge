@@ -18,7 +18,10 @@ const double Sphere::get_radius() { return radius; }
 
 tuple::Tuple Sphere::normal(tuple::Tuple point)
 {
-    return tuple::normalise(point - origin);
+    tuple::Tuple object_point = matrix::inverse(get_transform()) * point;
+    tuple::Tuple object_normal = object_point - origin;
+    tuple::Tuple world_normal = matrix::transpose(matrix::inverse(matrix::submatrix(get_transform(), 3, 3))) * object_normal;
+    return tuple::normalise(tuple::make_vector(world_normal));
 }
 
 } // namespace shape
