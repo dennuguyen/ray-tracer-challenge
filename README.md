@@ -1,12 +1,12 @@
-Ray Tracer
+# Ray Tracer
 
-Progress so far:
+## Progress
 
 ![red_circle](red_circle.png)
 
 ![red_sphere](red_sphere.png)
 
-PPM ADT Supports:
+## PPM ADT Supports:
 - Layered objects
 - No fill
 - Text
