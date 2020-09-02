@@ -42,7 +42,6 @@ double magnitude(Tuple u);
 Tuple normalise(Tuple u);
 double dot(Tuple a, Tuple b);
 Tuple cross(Tuple a, Tuple b);
-Tuple reflect(Tuple v, Tuple n);
 
 // Overloaded Operators
 inline bool operator==(Tuple a, Tuple b) { return is_equal_tuple(a, b); };

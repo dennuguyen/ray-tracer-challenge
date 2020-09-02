@@ -136,11 +136,6 @@ Tuple cross(Tuple a, Tuple b)
                  IS_VECTOR);
 }
 
-Tuple reflect(Tuple v, Tuple n)
-{
-    return v - n * 2 * dot(v, n);
-}
-
 void dump(Tuple a)
 {
     std::cout << std::endl;
