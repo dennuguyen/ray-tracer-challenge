@@ -1,8 +1,10 @@
 #include <iostream>
 #include <string>
 
+#include "light.hpp"
 #include "ppm.hpp"
 #include "ray.hpp"
+#include "shades.hpp"
 #include "shape.hpp"
 #include "sphere.hpp"
 #include "intersection.hpp"
@@ -57,14 +59,22 @@ int main(int argv, char *argc[])
     }
 
     //////////////////////////////////////////////////////////////////////////
+    // Canvas
     std::vector<ppm::PortablePixMap> canvas;
     ppm::PortablePixMap map(100, 100);
-
     double wall_z = 10.0;
     double wall_size = 7.0;
     double pixel_size = wall_size / 100;
+
+    // Our POV
     tuple::Tuple ray_origin = tuple::make_point(0, 0, -5);
+
+    // Shape
     shape::Sphere s;
+    s.set_material(shades::Material(colour::Colour(1, 0.2, 1), 0.1, 0.9, 0.9, 200.0));
+
+    // Light source
+    shades::PointLight light(tuple::make_point(-10, 10, -10), colour::WHITE);
 
     for (int y = 0; y < 100; y++)
     {
@@ -72,13 +82,19 @@ int main(int argv, char *argc[])
         for (int x = 0; x < 100; x++)
         {
             double world_x = -(wall_size / 2) + (pixel_size * x);
-            tuple::Tuple position = tuple::make_point(world_x, world_y, wall_z);
-            ray::Ray r(ray_origin, tuple::normalise(position - ray_origin));
+            tuple::Tuple canvas_pos = tuple::make_point(world_x, world_y, wall_z);
+            ray::Ray r(ray_origin, tuple::normalise(canvas_pos - ray_origin));
             std::vector<intersection::Intersection> xs = intersection::intersect(s, r);
+            intersection::Intersection h = intersection::hit(xs);
 
-            if (intersection::hit(xs).empty == false)
+            if (h.empty == false)
             {
-                map.write_pixel(x, y, colour::RED);
+                // std::cout << "X: " << x << " , Y: " << y << std::endl;
+                tuple::Tuple p = r.pose(h.t);
+                tuple::Tuple n = s.normal(p);
+                tuple::Tuple e = -r.vector;
+                colour::Colour col = shades::lighting(h.obj.get_material(), light, p, e, n);
+                map.write_pixel(x, y, col);
             }
         }
     }
