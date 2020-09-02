@@ -30,7 +30,7 @@ Colour colour_multiply(Colour a, Colour b);
 inline bool operator==(Colour a, Colour b) { return is_same_colour(a, b); };
 inline Colour operator+(Colour a, Colour b) { return add(a, b); };
 inline Colour operator-(Colour a, Colour b) { return minus(a, b); };
-inline Colour operator^(Colour a, double scalar) { return scalar_multiply(a, scalar); };
+inline Colour operator*=(Colour a, double scalar) { return scalar_multiply(a, scalar); };
 inline Colour operator*(Colour a, Colour b) { return colour_multiply(a, b); };
 
 // Colour Palette
