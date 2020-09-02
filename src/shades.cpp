@@ -36,13 +36,14 @@ colour::Colour lighting(Material material,
     tuple::Tuple lightv = tuple::normalise(light.get_position() - position);
     double light_dot_normal = tuple::dot(lightv, normalv);
 
-    colour::Colour ambient = effective_colour *= material.ambient;
+    colour::Colour ambient(effective_colour *= material.ambient);
     colour::Colour diffuse(colour::BLACK);
     colour::Colour specular(colour::BLACK);
 
     if (light_dot_normal >= 0)
     {
         diffuse = effective_colour *= material.diffuse * light_dot_normal;
+        
         tuple::Tuple reflectv = reflect(-lightv, normalv);
         double reflect_dot_eye = tuple::dot(reflectv, eyev);
         
