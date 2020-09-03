@@ -8,16 +8,17 @@ namespace shape
 {
 class Sphere : public Shape
 {
-    public:
+public:
     Sphere(void);
     Sphere(tuple::Tuple origin_, double radius_);
     ~Sphere();
 
     const tuple::Tuple get_origin();
     const double get_radius();
-    tuple::Tuple normal(tuple::Tuple point);
 
-    private:
+    tuple::Tuple normal(tuple::Tuple point) override;
+
+private:
     tuple::Tuple origin;
     double radius;
 };

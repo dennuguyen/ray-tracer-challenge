@@ -84,14 +84,14 @@ int main(int argv, char *argc[])
             double world_x = -(wall_size / 2) + (pixel_size * x);
             tuple::Tuple canvas_pos = tuple::make_point(world_x, world_y, wall_z);
             ray::Ray r(ray_origin, tuple::normalise(canvas_pos - ray_origin));
-            std::vector<intersection::Intersection> xs = intersection::intersect(s, r);
+            std::vector<intersection::Intersection> xs = intersection::intersect(s, r); // did Sphere get passed or Shape
             intersection::Intersection h = intersection::hit(xs);
 
             if (h.empty == false)
             {
                 // std::cout << "X: " << x << " , Y: " << y << std::endl;
                 tuple::Tuple p = r.pose(h.t);
-                tuple::Tuple n = s.normal(p);
+                tuple::Tuple n = h.obj.normal(p); // calls wrong normal()
                 tuple::Tuple e = -r.vector;
                 colour::Colour col = shades::lighting(h.obj.get_material(), light, p, e, n);
                 map.write_pixel(x, y, col);

@@ -19,6 +19,8 @@ public:
     void set_transform(matrix::Matrix m);
     void set_material(shades::Material m);
 
+    virtual tuple::Tuple normal(tuple::Tuple point);
+
 protected:
     bool empty;
     int id;
