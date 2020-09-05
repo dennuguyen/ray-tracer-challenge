@@ -2,7 +2,10 @@
 
 namespace shape
 {
-Sphere::Sphere(void) : Sphere(tuple::make_point(0.0, 0.0, 0.0), 1.0) {}
+Sphere::Sphere(void) : Sphere(tuple::make_point(0.0, 0.0, 0.0), 1.0)
+{
+    empty = false;
+}
 
 Sphere::Sphere(tuple::Tuple origin_, double radius_)
     : origin(origin_)
@@ -10,6 +13,16 @@ Sphere::Sphere(tuple::Tuple origin_, double radius_)
 {
     empty = false;
 }
+
+Sphere::Sphere(matrix::Matrix transform_, shades::Material material_, tuple::Tuple origin_, double radius_)
+    : Shape(transform_, material_)
+    , origin(origin_)
+    , radius(radius_)
+{}
+
+Sphere::Sphere(matrix::Matrix transform_, shades::Material material_)
+    : Sphere(transform_, material_, tuple::make_point(0.0, 0.0, 0.0), 1.0)
+{}
 
 Sphere::~Sphere() {}
 
