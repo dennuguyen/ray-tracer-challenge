@@ -2,8 +2,6 @@
 #include <cmath>
 #include <iostream>
 
-#include "environment.hpp"
-#include "projectile.hpp"
 #include "test_tuple.hpp"
 #include "tuple.hpp"
 #include "utils.hpp"

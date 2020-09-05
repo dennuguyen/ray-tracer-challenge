@@ -15,7 +15,6 @@
 #include "test_intersection.hpp"
 #include "test_shades.hpp"
 #include "test_matrix.hpp"
-#include "test_projectile.hpp"
 #include "test_ray.hpp"
 #include "test_ray_transform.hpp"
 #include "test_matrix_transform.hpp"
@@ -37,7 +36,6 @@ int main(int argv, char *argc[])
         if (arg == "test_intersection") test_intersection();
         if (arg == "test_matrix") test_matrix();
         if (arg == "test_matrix_transform") test_matrix_transform();
-        if (arg == "test_projectile") test_projectile();
         if (arg == "test_ray") test_ray();
         if (arg == "test_ray_transform") test_ray_transform();
         if (arg == "test_shades") test_shades();
@@ -91,7 +89,7 @@ int main(int argv, char *argc[])
             {
                 // std::cout << "X: " << x << " , Y: " << y << std::endl;
                 tuple::Tuple p = r.pose(h.t);
-                tuple::Tuple n = h.obj.normal(p); // calls wrong normal()
+                tuple::Tuple n = s.normal(p); // calls wrong normal()
                 tuple::Tuple e = -r.vector;
                 colour::Colour col = shades::lighting(h.obj.get_material(), light, p, e, n);
                 map.write_pixel(x, y, col);
