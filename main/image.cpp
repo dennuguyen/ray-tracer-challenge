@@ -8,17 +8,9 @@
 #include "shape.hpp"
 #include "sphere.hpp"
 #include "intersection.hpp"
+#include "test.hpp"
 #include "tuple.hpp"
 
-#include "test_canvas.hpp"
-#include "test_colour.hpp"
-#include "test_intersection.hpp"
-#include "test_shades.hpp"
-#include "test_matrix.hpp"
-#include "test_ray.hpp"
-#include "test_ray_transform.hpp"
-#include "test_matrix_transform.hpp"
-#include "test_tuple.hpp"
 
 int main(int argv, char *argc[])
 {
@@ -31,15 +23,15 @@ int main(int argv, char *argc[])
     for (int i = 0; i < argv; i++)
     {
         std::string arg = argc[i];
-        if (arg == "test_canvas") test_canvas();
-        if (arg == "test_colour") test_colour();
-        if (arg == "test_intersection") test_intersection();
-        if (arg == "test_matrix") test_matrix();
-        if (arg == "test_matrix_transform") test_matrix_transform();
-        if (arg == "test_ray") test_ray();
-        if (arg == "test_ray_transform") test_ray_transform();
-        if (arg == "test_shades") test_shades();
-        if (arg == "test_tuple") test_tuple();
+        if (arg == "test_canvas") test_canvas::test_canvas();
+        if (arg == "test_colour") test_colour::test_colour();
+        if (arg == "test_intersection") test_intersection::test_intersection();
+        if (arg == "test_matrix") test_matrix::test_matrix();
+        if (arg == "test_matrix_transform") test_matrix_transform::test_matrix_transform();
+        if (arg == "test_ray") test_ray::test_ray();
+        if (arg == "test_ray_transform") test_ray_transform::test_ray_transform();
+        if (arg == "test_shades") test_shades::test_shades();
+        if (arg == "test_tuple") test_tuple::test_tuple();
     }
 
     std::string file_name = argc[1];

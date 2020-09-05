@@ -7,9 +7,10 @@
 #include "ray.hpp"
 #include "shape.hpp"
 #include "sphere.hpp"
+#include "test.hpp"
 
-#include "test_ray_transform.hpp"
-
+namespace test_ray_transform
+{
 void test_ray_transform(void)
 {
     test_ray_translation();
@@ -87,3 +88,4 @@ void test_scaled_sphere_intersection(void)
 
     std::cout << "Passed!" << std::endl;
 }
+} // namespace test_ray_transform

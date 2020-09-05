@@ -5,8 +5,10 @@
 #include "matrix.hpp"
 #include "ray.hpp"
 #include "shape.hpp"
-#include "test_ray.hpp"
+#include "test.hpp"
 
+namespace test_ray
+{
 void test_ray(void)
 {
     test_ray_creation();
@@ -89,3 +91,4 @@ void test_sphere_ray_intersection(void)
 
     std::cout << "Passed!" << std::endl;
 }
+} // namespace test_ray

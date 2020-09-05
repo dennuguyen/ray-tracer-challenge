@@ -3,8 +3,10 @@
 #include <cmath>
 
 #include "matrix.hpp"
-#include "test_matrix_transform.hpp"
+#include "test.hpp"
 
+namespace test_matrix_transform
+{
 void test_matrix_transform(void)
 {
     test_matrix_translation();
@@ -210,3 +212,4 @@ void test_matrix_chain_transforms(void)
 
     std::cout << "Passed!" << std::endl;
 }
+} // namespace test_matrix_transform

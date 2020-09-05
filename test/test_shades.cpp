@@ -6,10 +6,11 @@
 #include "shades.hpp"
 #include "shape.hpp"
 #include "sphere.hpp"
-
-#include "test_shades.hpp"
+#include "test.hpp"
 #include "utils.hpp"
 
+namespace test_shades
+{
 void test_shades(void)
 {
     test_sphere_normal();
@@ -167,3 +168,4 @@ void test_lighting(void)
 
     std::cout << "Passed!" << std::endl;
 }
+} // namespace test_shades

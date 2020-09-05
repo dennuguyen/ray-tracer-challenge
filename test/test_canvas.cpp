@@ -3,8 +3,10 @@
 
 #include "ppm.hpp"
 #include "colour.hpp"
-#include "test_canvas.hpp"
+#include "test.hpp"
 
+namespace test_canvas
+{
 void test_canvas(void)
 {
     test_canvas_creation();
@@ -43,3 +45,4 @@ void test_ppm(void)
 
     std::cout << "Passed!" << std::endl;
 }
+} // namespace test_canvas

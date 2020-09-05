@@ -4,8 +4,10 @@
 #include "intersection.hpp"
 #include "ray.hpp"
 #include "shape.hpp"
-#include "test_intersection.hpp"
+#include "test.hpp"
 
+namespace test_intersection
+{
 void test_intersection(void)
 {
     test_intersection_creation();
@@ -127,3 +129,4 @@ void test_hits(void)
 
     std::cout << "Passed!" << std::endl;
 }
+} // namespace intersection

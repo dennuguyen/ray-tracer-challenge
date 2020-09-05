@@ -3,9 +3,11 @@
 
 #include "colour.hpp"
 #include "tuple.hpp"
-#include "test_colour.hpp"
+#include "test.hpp"
 #include "utils.hpp"
 
+namespace test_colour
+{
 void test_colour(void)
 {
     test_colour_rgb();
@@ -86,3 +88,4 @@ void test_colour_multiply(void)
 
     std::cout << "Passed!" << std::endl;
 }
+} // namespace test_colour

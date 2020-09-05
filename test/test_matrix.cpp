@@ -2,8 +2,10 @@
 #include <iostream>
 
 #include "matrix.hpp"
-#include "test_matrix.hpp"
+#include "test.hpp"
 
+namespace test_matrix
+{
 void test_matrix(void)
 {
     test_matrix_creation();
@@ -494,3 +496,4 @@ void test_matrix_inverse_proof(void)
 
     std::cout << "Passed!" << std::endl;
 }
+} // namespace test_matrix

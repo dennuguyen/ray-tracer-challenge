@@ -2,10 +2,12 @@
 #include <cmath>
 #include <iostream>
 
-#include "test_tuple.hpp"
+#include "test.hpp"
 #include "tuple.hpp"
 #include "utils.hpp"
 
+namespace test_tuple
+{
 void test_tuple(void)
 {
     test_tuple_point();
@@ -282,3 +284,4 @@ void test_cross_product(void)
 
     std::cout << "Passed!" << std::endl;
 }
+} // namespace test_tuple
