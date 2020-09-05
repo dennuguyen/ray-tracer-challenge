@@ -19,4 +19,10 @@ const colour::Colour PointLight::get_intensity(void)
     return intensity;
 }
 
+bool is_same_light(PointLight a, PointLight b)
+{
+    return a.get_position() == b.get_position()
+        && a.get_intensity() == b.get_intensity();
+}
+
 } // namespace shades
