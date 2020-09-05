@@ -30,6 +30,7 @@ int main(int argv, char *argc[])
         if (arg == "test_matrix_transform") test_matrix_transform::test_matrix_transform();
         if (arg == "test_ray") test_ray::test_ray();
         if (arg == "test_ray_transform") test_ray_transform::test_ray_transform();
+        if (arg == "test_scene") test_scene::test_scene();
         if (arg == "test_shades") test_shades::test_shades();
         if (arg == "test_tuple") test_tuple::test_tuple();
     }

@@ -86,6 +86,14 @@ void test_sphere_transform(void);
 void test_scaled_sphere_intersection(void);
 } // namespace test_ray_transform
 
+namespace test_scene
+{
+void test_scene(void);
+void test_empty_world(void);
+void test_default_world(void);
+void test_world_ray_intersection(void);
+} // namespace test_scene
+
 namespace test_shades
 {
 void test_shades(void);
